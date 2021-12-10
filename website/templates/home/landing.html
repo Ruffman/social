@@ -80,16 +80,16 @@
                 <li><a class="dropdown-item" href="{% url 'website:tenants' %}">Mieter</a></li>
                 <li><a class="dropdown-item" href="{% url 'website:landlords' %}">Vermieter</a></li>
                 <li><hr class="dropdown-divider"</hr></li>
-                <li><a class="dropdown-item dropdown-item-primary" href="#">Registrieren</a></li>
+                <li><a class="dropdown-item dropdown-item-primary" href="{% url 'website:login' %}">Registrieren</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownHilfe" role="button" data-bs-toggle="dropdown" aria-expanded="false">Hilfe/Ratgeber</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Sicherheit</a></li>
-                <li><a class="dropdown-item" href="#">Mietrecht</a></li>
-                <li><a class="dropdown-item" href="#">Bonitätscheck</a></li>
-                <li><a class="dropdown-item" href="#">Kontakt/FAQ</a></li>
+                <li><a class="dropdown-item" href="{% url 'website:safety' %}">Sicherheit</a></li>
+                <li><a class="dropdown-item" href="">Mietrecht</a></li>
+                <li><a class="dropdown-item" href="">Bonitätscheck</a></li>
+                <li><a class="dropdown-item" href="{% url 'website:FAQ' %}">Kontakt/FAQ</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
