@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth import views as auth_views
 from . import views
 
 
@@ -6,7 +7,10 @@ app_name = 'website'
 
 urlpatterns = [
     path('', views.LandingView.as_view(), name='landing'),
-    path('login/', views.LoginView.as_view(), name = 'login'),
+    path('landing/', views.LandingView.as_view(), name='landing'),
+    path('login/', auth_views.LoginView.as_view(template_name="home/login.html"),name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name="logout"),
+    path('signup/', views.SignUp.as_view(), name="signup"),
     path('available/', views.AvailableView.as_view(), name = 'available'),
     path('create_ad/', views.CreateAdView.as_view(), name = 'create_ad'),
     path('landlords/', views.LandlordsView.as_view(), name = 'landlords'),

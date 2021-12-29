@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib import auth
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
 
+from . import forms
 from django.views.generic import (TemplateView)
 
 # Create your views here.
@@ -33,3 +37,9 @@ class LandlordsView(TemplateView):
 
 class TenantsView(TemplateView):
     template_name = 'people/tenants.html'
+
+
+class SignUp(CreateView):
+    form_class = forms.UserCreateForm
+    success_url = reverse_lazy('login')
+    template_name = 'home/signup.html'
